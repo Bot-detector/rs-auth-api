@@ -23,9 +23,9 @@ pip install -r requirements.txt
 
 ```
 venv\Scripts\activate
-call pip freeze > requirements.txt
+pip freeze > requirements.txt
 powershell "(Get-Content requirements.txt) | ForEach-Object { $_ -replace '==', '>=' } | Set-Content requirements.txt"
-call pip install -r requirements.txt --upgrade
-call pip freeze > requirements.txt
+pip install -r requirements.txt --upgrade
+pip freeze > requirements.txt
 powershell "(Get-Content requirements.txt) | ForEach-Object { $_ -replace '>=', '==' } | Set-Content requirements.txt"
 ```
